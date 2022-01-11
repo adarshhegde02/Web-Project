@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/registerpage.css">
+    <script>
+        function validate(){
+            var fname=document.reg_form.fname;
+            var lname=document.reg_form.lname;
+            var username=document.reg_form.username;
+            var password=document.reg_form.password;
+            var address=document.reg_form.address;
+            var contactno=document.reg_form.contactno;
+            console.log(document.reg_form.fname.value);
+
+            if(fname.value.length<=0){
+                alert("First name is required ");
+                fname.focus();
+                return false;
+            }
+            if(username.value.length<=0){
+                alert("User name is required ");
+                username.focus();
+                return false;
+            }
+            if(password.value.length<=0){
+                alert("Password name is required ");
+                password.focus();
+                return false;
+            }
+            if(address.value.length<=0){
+                alert("Address is required ");
+                address.focus();
+                return false;
+            }
+            if(contactno.value.length<=0){
+                alert("Contact number is required ");
+                contactno.focus();
+                return false;
+            }
+           
+    
+        }
+        function validFName(id) {
+            var reg=/^[a-zA-Z]+$/;
+            if(!reg.test(fname.value)){
+                fname.style.border="1px solid red";
+                alert('Only letters are allowed');
+                return false;
+            }
+            fname.style.border = "1px solid green";
+
+        }
+        function validLName(id) {
+            var reg=/^[a-zA-Z]+$/;
+            if(!reg.test(lname.value)){
+                lname.style.border="1px solid red";
+                alert('Only letters are allowed');
+
+                return false;
+            }
+            lname.style.border = "1px solid green";
+
+        }
+        function validUName(id) {
+            var reg=/^[a-zA-Z0-9._]+$/;
+            if(!reg.test(uname.value)){
+                uname.style.border="1px solid red";
+                alert('Special characters are not allowed');
+
+                return false;
+            }
+            uname.style.border = "1px solid green";
+            localStorage.setItem('uname',uname.value);
+        }
+        function validPass(id) {
+            var reg=/^[a-zA-Z0-9._]+$/;
+            if(!reg.test(pass.value)){
+                pass.style.border="1px solid red";
+                alert('Special characters are not allowed');
+
+                return false;
+            }
+            pass.style.border = "1px solid green";
+            localStorage.setItem('pass',pass.value);
+        }
+        function validContactNo(id) {
+            var reg=/^[0-9]+$/;
+            if(!reg.test(c.value)){
+                c.style.border="1px solid red";
+                alert('Special characters are not allowed');
+
+                return false;
+            }
+            c.style.border = "1px solid green";
+            
+        }
+    </script>
+     <script>
+        function disp() {
+            let date=new Date();
+            document.getElementById('mytime').innerHTML=date.toLocaleTimeString();
+            let year=new Date();
+            document.getElementById('year').innerHTML=year.getFullYear();
+        }
+        setInterval(disp,1000);
+    </script>
+</head>
+<body>
+    <div>
+
+        <div id="head1">
+            <img src="img/download.jfif" id="logo">
+            <span id="text1">ThoughtFocus</span>
+            <div class="top" style="font-size: 20px;">Social Links:</div>
+            <div class="top"style="font-size: 20px;"><a href="">Facebook</a></div>
+            <div class="top"style="font-size: 20px;"><a href="">Twitter</a></div>
+            <div class="top"style="font-size: 20px;"><a href="">LinkedIn</a></div>
+        </div>
+        <div id="head2">
+            <nav id="nav1">
+            <span class="nav2"><a href="http://127.0.0.1:5500/addNewEmployee.html">Add New</a></span>
+            <span class="nav2"><a href="">View</a></span>
+            <span class="nav2"><a href="">Remove</a></span>
+            <span class="nav2"><a href="">Search</a></span>
+            <span class="nav2"><a href="">Bonus</a></span>
+            <div style="display: inline-block; position:relative; top: 10px; left:60%;" id="mytime"></div>
+            </nav>
+
+        <form method="" name="reg_form" onsubmit="return validate()" action="login.html">
+            <center><h2>Registration Form</h2></center>
+            <center>
+        <table>
+            <tr>
+                <td><label>FirstName:</label></td>
+                <td><input type="text" name="fname" id="fname" onchange="validFName(this.id)"></td>
+            </tr>
+            <tr>
+                <td><label>LastName:</label></td>
+                <td><input type="text" name="lname" id="lname" onchange="validLName(this.id)"></td>
+            </tr>
+            <tr>
+                <td><label>UserName:</label></td>
+                <td><input type="text" name="username" id="uname" onchange="validUName(this.id)"></td>
+            </tr>
+            <tr>
+                <td><label>Password:</label></td>
+                <td><input type="password" name="password" id="pass" onchange="validPass(this.id)"></td>
+            </tr>
+            <tr>
+                <td><label>Address:</label></td>
+                <td><textarea name="address"></textarea></td>
+            </tr>
+            <tr>
+                <td><label>ContactNo:</label></td>
+                <td><input type="number" name="contactno" id="c" onchange="validContactNo(this.id)"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="position: relative; left:-38px;">
+                    <input type="submit" name="submit" value="Submit" >
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </center>
+    </form>
+
+
+</div>
+<div >
+    <center>
+    <footer style="background-color: white;">
+        All Right &copy;<span id="year"></span>
+    </footer>
+</center>
+
+</div>
+
+
+    </div>
+<script src="js/loginscript.js"></script>
+</body>
+</html>

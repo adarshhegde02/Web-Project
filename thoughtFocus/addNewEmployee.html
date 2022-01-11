@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/addpage.css">
+    <script src="js/mainscript.js"></script>
+    <script>
+        function disp() {
+            let date=new Date();
+            document.getElementById('mytime').innerHTML=date.toLocaleTimeString();
+            let year=new Date();
+            document.getElementById('year').innerHTML=year.getFullYear();
+        }
+        setInterval(disp,1000);
+    </script>
+</head>
+<body>
+    <div>
+
+        <div id="head1">
+            <img src="img/download.jfif" id="logo">
+            <span id="text1">ThoughtFocus</span>
+            <div class="top" style="font-size: 20px;">Social Links:</div>
+            <div class="top"style="font-size: 20px;"><a href="">Facebook</a></div>
+            <div class="top"style="font-size: 20px;"><a href="">Twitter</a></div>
+            <div class="top"style="font-size: 20px;"><a href="">LinkedIn</a></div>
+        </div>
+
+        <div id="head2">
+            <nav id="nav1">
+            <span class="nav2"><a href="">Home</a></span>
+            <span class="nav2"><a href="">View</a></span>
+            <span class="nav2"><a href="">Remove</a></span>
+            <span class="nav2"><a href="">Search</a></span>
+            <div style="display: inline-block; position:relative; top: 10px; left:60%;" id="mytime"></div>
+            </nav>
+
+        </div>
+        <div class="addEmployee">
+            <form >
+                <input type="number" id="empid" placeholder="Employee ID">
+                <span style="color: red;" id="idmessage"> </span>
+                <input type="text" id="name" placeholder="Employee Name">
+                <span id="namemessage" style="color: red;"></span>
+                <input type="number" id="salary" placeholder="Salary">
+                <span id="salmessage" style="color: red;"></span>
+               
+                <select name="" id="dept" >
+                    <option value="" >--Select Department--</option>
+                    <option value="IT" id="dep1">IT Department</option>
+                    <option value="HR" id="dep2">HR Department</option>
+                    <option value="Admin" id="dep3">Admin Department</option>
+                    <option value="Account" id="dep4">Account Department</option>
+                </select>
+                <select name="" id="skill" >
+                    <option value="">--Select Skill--</option>
+                    <option value="Java" id="skill1">Java</option>
+                    <option value="JavaScript" id="skill2">JavaScript</option>
+                    <option value="HTML" id="skill3">HTML</option>
+                    <option value="CSS" id="skill4">CSS</option>
+                    <option value="Angular" id="skill5">Angular</option>
+                    <option value="J2EE" id="skill6">J2EE</option>
+                </select>
+                <input onclick="saveDetails()" id="save"  type="submit" value="Add" style="border-radius: 25px; background-color: rgb(47, 194, 28);">
+                <input  type="reset" value="clear" style="border-radius: 25px;  background-color: rgb(47, 194, 28)">
+            </form>
+            
+        </div>
+    </div>
+    <div >
+        <center>
+        <footer style="background-color: white;">
+            All Right &copy;<span id="year"></span>
+        </footer>
+    </center>
+
+    </div>
+
+</body>
+
+</html>

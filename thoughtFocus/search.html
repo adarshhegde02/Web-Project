@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/removepage.css">
+    <script src="js/mainscript.js"></script>
+    <script>
+        function disp() {
+            let date=new Date();
+            document.getElementById('mytime').innerHTML=date.toLocaleTimeString();
+            let year=new Date();
+            document.getElementById('year').innerHTML=year.getFullYear();
+        }
+        setInterval(disp,1000);
+    </script>
+</head>
+<body>
+    <div>
+
+        <div id="head1">
+            <img src="img/download.jfif" id="logo">
+            <span id="text1">ThoughtFocus</span>
+            <div class="top" style="font-size: 20px;">Social Links:</div>
+            <div class="top"style="font-size: 20px;"><a href="">Facebook</a></div>
+            <div class="top"style="font-size: 20px;"><a href="">Twitter</a></div>
+            <div class="top"style="font-size: 20px;"><a href="">LinkedIn</a></div>
+        </div>
+        <div id="head2">
+            <nav id="nav1">
+            <span class="nav2"><a href="http://127.0.0.1:5500/addNewEmployee.html">Add New</a></span>
+            <span class="nav2"><a href="">View</a></span>
+            <span class="nav2"><a href="">Remove</a></span>
+            <span class="nav2"><a href="">Search</a></span>
+            <span class="nav2"><a href="">Bonus</a></span>
+            <div style="display: inline-block; position:relative; top: 10px; left:60%;" id="mytime"></div>
+            </nav>
+
+        </div>
+        <div>
+            <form id="r1">
+                <table>
+                    <tr>
+                        <td>Enter Emp Id:</td>
+                        <td><input type="text" name="" id="e1"></td>
+                        <td><button onclick="return search()">Serach</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div >
+            <center>
+            <footer style="background-color: white;">
+                All Right &copy;<span id="year"></span>
+            </footer>
+        </center>
+    
+        </div>
+
+
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#head1{
+    background-color: darkseagreen;
+    width: 100%;
+    height: 100px;
+    margin:0px;
+    padding: 0px;
+}
+
+#head2{
+    background-color: darkgrey;
+    width: 100%;
+    height: 900px;
+    margin:0px;
+    padding: 0px;
+}
+
+#logo{
+    height: 75px;
+    width: 75px;
+    margin: 10px 10px 10px 10px;
+    float: left;
+}
+
+#text1{
+    font-size: 50px;
+    position: absolute;
+    margin-top: 25px;
+}
+
+#text2{
+font-size: 20px;
+position: relative;
+margin-left: 100px;
+
+}
+
+.top{
+    display: inline;
+    position: relative;
+    left:60%;
+    float:left;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#nav1{
+    height:40px;
+    width:100%;
+    background-color:khaki; 
+}
+
+.nav2{
+    font-size: 20px;
+    padding-right: 20px;
+    position: relative;
+    top: 10px;
+}
+
+button{
+    position: absolute;
+    left:45%;
+    top:25%;
+    width: 100px;
+}
